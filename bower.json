@@ -1,13 +1,14 @@
 {
-  "name": "Responsive-Dashboard",
-  "version": "0.0.2",
-  "homepage": "https://github.com/Ehesp/Responsive-Dashboard",
+  "name": "admin",
+  "version": "0.1.2",
+  "homepage": "https://github.com/EmilS/admin",
   "authors": [
+    "Emil Stolarsky <emil.stolarsky@gmail.com>",
     "Elliot Hesp <elliot.hesp@gmail.com>",
     "Ricardo Pascua Jr <rdpascua@outlook.com>",
     "Leonel Samayoa <leonel.e.samayoa@gmail.com>"
   ],
-  "description": "AngularJS + Bootstrap Responsive Dashboard",
+  "description": "Simple, responsive, admin dashboard.",
   "main": "index.html",
   "license": "MIT",
   "ignore": [
@@ -18,15 +19,12 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "~1.2.21",
-    "angular-cookies": "~1.2.21",
-    "angular-bootstrap": "~0.11.0",
-    "angular-ui-router": "^0.2.10",
+    "jquery": "~2.1.3",
     "bootstrap": "~3.2.0",
     "font-awesome": "~4.1.0"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/Ehesp/Responsive-Dashboard.git"
+    "url": "git://github.com/EmilS/admin.git"
   }
 }

@@ -1,8 +1,9 @@
 {
-  "name": "Responsive-Dashboard",
-  "version": "0.0.2",
-  "author": "Elliot Hesp",
+  "name": "admin",
+  "version": "0.1.2",
+  "author": "Emil Stolarsky",
   "contributors": [
+    "Elliot Hesp <elliot.hesp@gmail.com>",
     "Leonel Samayoa <leonel.e.samayoa@gmail.com> (http://gobliip.com)",
     "Ricardo Pascua <rdpascua@outlook.com>"
   ],
