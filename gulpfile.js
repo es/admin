@@ -5,7 +5,9 @@ var gulp      = require('gulp'),
     wrap      = require('gulp-wrap'),
     concat    = require('gulp-concat'),
     connect   = require('gulp-connect'),
-    watch     = require('gulp-watch');
+    watch     = require('gulp-watch'),
+    uglify    = require('gulp-uglify'),
+    minifyCss = require('gulp-minify-css');
 
 var paths = {
   js: 'src/js/*.*',
@@ -22,6 +24,14 @@ gulp.task('usemin', function() {
   return gulp.src(paths.index)
     .pipe(usemin({
       js: ['concat']
+    }))
+    .pipe(gulp.dest('dist/'));
+});
+
+gulp.task('usemin:dist', function() {
+  return gulp.src(paths.index)
+    .pipe(usemin({
+      js: ['concat', uglify()]
     }))
     .pipe(gulp.dest('dist/'));
 });
@@ -82,5 +92,14 @@ gulp.task('compile-sass', function(){
       .pipe(gulp.dest('dist/src/'));
 });
 
-gulp.task('build', ['usemin', 'copy-assets', 'compile-sass']);
-gulp.task('default', ['build', 'webserver', 'livereload', 'watch']);
+gulp.task('compile-sass:dist', function(){
+  return gulp.src(paths.styles)
+      .pipe(sass())
+      .pipe(concat('admin.css'))
+      .pipe(minifyCss())
+      .pipe(gulp.dest('dist/src/'));
+});
+
+gulp.task('build', ['usemin:dist', 'copy-assets', 'compile-sass:dist']);
+gulp.task('assets', ['usemin', 'copy-assets', 'compile-sass']);
+gulp.task('default', ['assets', 'webserver', 'livereload', 'watch']);
