@@ -6,7 +6,7 @@ I'm fully open to all new ideas and improvements, however please keep in mind th
 * Avoid using plugins/3rd party libaries
 * Ensure your code works cross (major) browsers - Chrome, Firefox & IE11+ (CSS3 support)
 * Ensure your code works on all screen sizes. [Chrome Emulation](https://developer.chrome.com/devtools/docs/device-mode) is handy here!
-* If you're working with CSS, ensure the LESS files are also created, and visa versa.
+* If you're working with CSS, ensure the SASS files are also created, and visa versa.
 * The build system of choice is [Gulp](http://gulpjs.com/).
 * The package manager of choice is [Bower](http://bower.io/).
 
