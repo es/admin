@@ -1,15 +1,15 @@
-var gulp    = require('gulp'),
-  less      = require('gulp-less'),
-  usemin    = require('gulp-usemin'),
-  wrap      = require('gulp-wrap'),
-  connect   = require('gulp-connect'),
-  watch     = require('gulp-watch');
+var gulp      = require('gulp'),
+    sass      = require('gulp-sass'),
+    usemin    = require('gulp-usemin'),
+    wrap      = require('gulp-wrap'),
+    connect   = require('gulp-connect'),
+    watch     = require('gulp-watch');
 
 var paths = {
   js: 'src/js/*.*',
   fonts: 'src/fonts/**.*',
   images: 'src/img/**/*.*',
-  styles: 'src/less/*.less',
+  styles: 'src/scss/*.scss',
   index: 'src/index.html',
   bower_fonts: 'src/bower_components/**/*.{ttf,woff,eof,svg}',
   bower_components: 'src/bower_components/**/*.*',
@@ -19,7 +19,7 @@ var paths = {
 gulp.task('usemin', function() {
   return gulp.src(paths.index)
     .pipe(usemin({
-      less: ['concat', less()],
+      sass: ['concat', sass()],
       js: ['concat', wrap('(function(){ \n<%= contents %>\n})();')],
     }))
     .pipe(gulp.dest('dist/'));
@@ -69,11 +69,11 @@ gulp.task('livereload', function() {
 });
 
 /**
- * Compile less
+ * Compile sass
  */
-gulp.task('compile-less', function(){
+gulp.task('compile-sass', function(){
   return gulp.src(paths.styles)
-      .pipe(less())
+      .pipe(sass())
       .pipe(gulp.dest('dist/css'));
 });
 
