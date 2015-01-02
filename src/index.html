@@ -73,19 +73,16 @@
           </div>
         </div>
       </div>
-
       <!-- End Sidebar -->
 
       <div id="content-wrapper">
         <div class="page-content">
-
           <!-- Header Bar -->
-
           <div class="row header">
             <div class="col-xs-12">
               <div class="user pull-right">
                 <div class="item dropdown">
-                  <a href="#" class="dropdown-toggle">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <img src="img/avatar.jpg">
                   </a>
                   <ul class="dropdown-menu dropdown-menu-right">
@@ -117,7 +114,7 @@
                   </ul>
                 </div>
                 <div class="item dropdown">
-                 <a href="#" class="dropdown-toggle">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                     <i class="fa fa-bell-o"></i>
                   </a>
                   <ul class="dropdown-menu dropdown-menu-right">
@@ -143,11 +140,141 @@
           </div>
 
 
-          <section></section>
+          <section>
+            <div class="row alerts-container">
+              <div class="col-xs-12">
+                <div class="alert alert-success alert-dismissible" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  Thanks for visiting! Feel free to create pull requests to improve the dashboard!
+                </div>
+                <div class="alert alert-danger alert-dismissible" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  Found a bug? Create an issue with as many details as you can.
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-3 col-md-6 col-xs-12">
+                <div class="widget">
+                  <div class="widget-body">
+                    <div class="widget-icon green pull-left">
+                      <i class="fa fa-users"></i>
+                    </div>
+                    <div class="widget-content pull-left">
+                      <div class="title">80</div>
+                      <div class="comment">Users</div>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-xs-12">
+                <div class="widget">
+                  <div class="widget-body">
+                    <div class="widget-icon red pull-left">
+                      <i class="fa fa-tasks"></i>
+                    </div>
+                    <div class="widget-content pull-left">
+                      <div class="title">16</div>
+                      <div class="comment">Servers</div>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 col-xs-12">
+                <div class="widget">
+                  <div class="widget-body">
+                    <div class="widget-icon orange pull-left">
+                      <i class="fa fa-sitemap"></i>
+                    </div>
+                    <div class="widget-content pull-left">
+                      <div class="title">225</div>
+                      <div class="comment">Documents</div>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="spacer visible-xs"></div>
+              <div class="col-lg-3 col-md-6 col-xs-12">
+                <div class="widget">
+                  <div class="widget-body">
+                    <div class="widget-icon blue pull-left">
+                      <i class="fa fa-support"></i>
+                    </div>
+                    <div class="widget-content pull-left">
+                      <div class="title">62</div>
+                      <div class="comment">Tickets</div>
+                    </div>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="widget">
+                  <div class="widget-header">
+                    <i class="fa fa-tasks"></i> Servers
+                    <a href="#" class="pull-right">Manage</a>
+                  </div>
+                  <div class="widget-body medium no-padding">
+                    <div class="table-responsive">
+                      <table class="table">
+                        <tbody>
+                          <tr><td>RDVMPC001</td><td>238.103.133.37</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
+                          <tr><td>RDVMPC002</td><td>68.66.63.170</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
+                          <tr><td>RDVMPC003</td><td>76.117.212.33</td><td><span tooltip="Server Down!" class="text-danger"><i class="fa fa-warning"></i></span></td></tr>
+                          <tr><td>RDPHPC001</td><td>91.88.224.5</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
+                          <tr><td>RDESX001</td><td>197.188.15.93</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
+                          <tr><td>RDESX002</td><td>168.85.154.251</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
+                          <tr><td>RDESX003</td><td>209.25.191.61</td><td><span tooltip="Server Down!" class="text-danger"><i class="fa fa-warning"></i></span></td></tr>
+                          <tr><td>RDESX004</td><td>252.37.192.235</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
+                          <tr><td>RDTerminal01</td><td>139.71.18.207</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
+                          <tr><td>RDTerminal02</td><td>136.80.122.212</td><td><span tooltip="Could not connect!" class="text-warning"><i class="fa fa-flash"></i></span></td></tr>
+                          <tr><td>RDDomainCont01</td><td>196.80.245.33</td><td><span class="text-success"><i class="fa fa-check"></i></span></td></tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <div class="widget">
+                  <div class="widget-header">
+                    <i class="fa fa-users"></i> Users
+                    <input type="text" placeholder="Search" class="form-control input-sm pull-right" />
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="widget-body medium no-padding">
+                    <div class="table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr><th class="text-center">ID</th><th>Username</th><th>Role</th><th>Account</th></tr>
+                        </thead>
+                        <tbody>
+                          <tr><td class="text-center">1</td><td>Joe Bloggs</td><td>Super Admin</td><td>AZ23045</td></tr>
+                          <tr><td class="text-center">2</td><td>Timothy Hernandez</td><td>Admin</td><td>AU24783</td></tr>
+                          <tr><td class="text-center">3</td><td>Joe Bickham</td><td>User</td><td>AM23781</td></tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End Main Content -->
+          </section>
         </div>
       </div>
     </div>
 
+    <!-- build:js lib/js/vendor.js -->
+      <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+      <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- endbuild -->
     <!-- build:js js/dashboard.js -->
       <script type="text/javascript" src="js/toggle.js"></script>
     <!-- endbuild -->
