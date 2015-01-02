@@ -6,10 +6,10 @@ var gulp    = require('gulp'),
   watch     = require('gulp-watch');
 
 var paths = {
-  js: 'src/js/**/*.*',
+  js: 'src/js/*.*',
   fonts: 'src/fonts/**.*',
   images: 'src/img/**/*.*',
-  styles: 'src/less/**/*.less',
+  styles: 'src/less/*.less',
   index: 'src/index.html',
   bower_fonts: 'src/bower_components/**/*.{ttf,woff,eof,svg}',
   bower_components: 'src/bower_components/**/*.*',
