@@ -1,7 +1,9 @@
 var gulp      = require('gulp'),
+    flatten   = require('gulp-flatten'),
     sass      = require('gulp-sass'),
     usemin    = require('gulp-usemin'),
     wrap      = require('gulp-wrap'),
+    concat    = require('gulp-concat'),
     connect   = require('gulp-connect'),
     watch     = require('gulp-watch');
 
@@ -19,8 +21,7 @@ var paths = {
 gulp.task('usemin', function() {
   return gulp.src(paths.index)
     .pipe(usemin({
-      sass: ['concat', sass()],
-      js: ['concat', wrap('(function(){ \n<%= contents %>\n})();')],
+      js: ['concat']
     }))
     .pipe(gulp.dest('dist/'));
 });
@@ -37,12 +38,14 @@ gulp.task('copy-images', function(){
 
 gulp.task('copy-fonts', function(){
   return gulp.src(paths.fonts)
+    .pipe(flatten())
     .pipe(gulp.dest('dist/fonts'));
 });
 
 gulp.task('copy-bower_fonts', function(){
   return gulp.src(paths.bower_fonts)
-    .pipe(gulp.dest('dist/lib'));
+    .pipe(flatten())
+    .pipe(gulp.dest('dist/fonts'));
 });
 
 /**
@@ -50,6 +53,7 @@ gulp.task('copy-bower_fonts', function(){
  */
 gulp.task('watch', function () {
   gulp.watch([paths.styles, paths.index, paths.js], ['usemin']);
+  gulp.watch([paths.styles], ['compile-sass']);
   gulp.watch([paths.images], ['copy-images']);
   gulp.watch([paths.fonts], ['copy-fonts']);
   gulp.watch([paths.bower_fonts], ['copy-bower_fonts']);
@@ -74,8 +78,9 @@ gulp.task('livereload', function() {
 gulp.task('compile-sass', function(){
   return gulp.src(paths.styles)
       .pipe(sass())
-      .pipe(gulp.dest('dist/css'));
+      .pipe(concat('admin.css'))
+      .pipe(gulp.dest('dist/src/'));
 });
 
-gulp.task('build', ['usemin', 'copy-assets']);
+gulp.task('build', ['usemin', 'copy-assets', 'compile-sass']);
 gulp.task('default', ['build', 'webserver', 'livereload', 'watch']);
